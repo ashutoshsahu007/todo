@@ -2,12 +2,13 @@ import TodoModel from "../models/Todo.js";
 
 // Get all incomplete todos
 export const getTodos = async (req, res) => {
+  console.log("fetching data");
   try {
-    const todos = await TodoModel.find({ completed: false });
-    console.log("Todos fetched:", todos);
-    res.json(todos);
+    const todo = await TodoModel.find();
+    console.log("Todos fetched", todo);
+    res.status(200).json(todo);
   } catch (error) {
-    console.error("Error fetching todos:", error);
+    console.log("Error fetching todos:", error);
     res.status(500).json({ error: "Failed to fetch todos" });
   }
 };

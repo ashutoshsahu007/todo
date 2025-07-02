@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Routes
-app.use("/todos", todoRoutes);
+app.use("/todoss", todoRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
